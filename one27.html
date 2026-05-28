@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One27 Student Accommodation</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Student Residence Finder</h2>
+
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#residences">Residences</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Residence Detail -->
+    <section class="residence-detail">
+
+        <h1>One27 Student Accommodation</h1>
+
+        <div class="image-gallery">
+            <img src="one27.jpg" alt="One27">
+            <img src="one271.jpg" alt="One27">
+            <img src="one272.jpg" alt="One27">
+            <img src="one273.jpg" alt="One27">
+        </div>
+
+        <p><strong>Location:</strong> Austin View, Midrand</p>
+
+        <p><strong>Availability:</strong> Single rooms and sharing rooms available</p>
+
+        <p><strong>Prices:</strong> From R3 000 per month</p>
+
+        <p><strong>Amenities:</strong> Wi-Fi, communal kitchen, laundry area, study space, parking and 24/7 security</p>
+
+        <p><strong>Phone:</strong> +27 79 662 1110</p>
+
+        <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
+
+        <!-- Review Form -->
+        <h3>Leave a Review</h3>
+
+        <form id="review-form">
+
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <textarea id="comment" placeholder="Your Review" required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <ul id="review-list"></ul>
+
+        <a href="index.html#contact" class="btn">Book Now</a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Student Residence Finder</p>
+    </footer>
+
+    <!-- Simple JavaScript to add reviews -->
+    <script>
+
+        document.getElementById("review-form").addEventListener("submit", function(e) {
+
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+
+            const comment = document.getElementById("comment").value;
+
+            const li = document.createElement("li");
+
+            li.textContent = `"${comment}" – ${name}`;
+
+            document.getElementById("review-list").appendChild(li);
+
+            // Clear form
+            document.getElementById("name").value = "";
+
+            document.getElementById("comment").value = "";
+
+        });
+
+    </script>
+
+</body>
+</html>
